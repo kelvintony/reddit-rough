@@ -1,0 +1,12 @@
+.dashboardHeader {
+	color: rgba(2, 34, 34, 0.5);
+}
+
+.dashboardHeader:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.dashboardHeaderActive {
+	color: rgb(1, 109, 109);
+}

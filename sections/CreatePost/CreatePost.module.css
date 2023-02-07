@@ -1,0 +1,200 @@
+/* rightbar section a */
+.rigtbar_section_a {
+	background-color: inherit;
+}
+
+.container_a {
+	padding: 20px;
+	background-color: #ffffff;
+	box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.15);
+
+	/* height: 600px; */
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding-bottom: 30px;
+}
+
+.interest_name,
+.select_interest,
+.interest_buttons {
+	margin-bottom: 10px;
+}
+
+.container_a h3 {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 17px;
+	color: #353535;
+	margin-bottom: 10px;
+	letter-spacing: 0.05em;
+}
+.select_interest {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.select_interest p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.select_interest select {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #4e4e4e;
+	outline: none;
+	height: 40px;
+	padding-left: 10px;
+	background-color: #ffffff;
+
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	border-radius: 10px;
+}
+
+.interest_name {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.interest_name p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.interest_name .txt_community,
+.interest_name .txt_post {
+	margin-top: 7px;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #4e4e4e;
+	outline: none;
+	/* height: 40px; */
+
+	padding: 20px;
+	height: 50px;
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	border-radius: 10px;
+}
+
+.interest_name .txt_post {
+	height: 200px;
+}
+
+/*Button utilities */
+.interest_buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
+}
+
+.interet_btnInner {
+	display: flex;
+	gap: 7px;
+}
+
+.btn_create {
+	border: none;
+	outline: none;
+	gap: 5px;
+	background-color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_create:hover {
+	background-color: #fd9c4d;
+}
+
+.btn_image {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 7px;
+}
+
+.interest_buttons > button {
+	background-color: #1682fd;
+}
+
+.interest_buttons > button:hover {
+	background-color: #53a3ff;
+}
+
+.btn_draft {
+	background-color: #9e9e9e;
+}
+
+.btn_draft:hover {
+	background-color: #666666;
+}
+@media screen and (max-width: 900px) {
+	/* rightbar section */
+	.rigtbar_section {
+		grid-template-columns: 1fr;
+		margin-left: 0;
+		margin-top: 90px;
+		padding-top: 0;
+	}
+	.container_a {
+		width: 300px;
+	}
+	.container_a h3 {
+		font-size: 16px;
+	}
+
+	.btn_create {
+		padding: 7px 7px;
+		height: 36px;
+	}
+
+	.btn_image {
+		gap: 3px;
+	}
+
+	.select_interest select,
+	.interest_name input {
+		padding: 7px 10px;
+		height: 40px;
+		font-size: 12px;
+	}
+	.interest_name textarea {
+		font-size: 12px;
+		padding: 7px 10px;
+	}
+
+	.interest_buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	/* rightbar section b */
+	.rigtbar_section_b {
+		margin-top: 20px;
+		gap: 5px;
+	}
+}

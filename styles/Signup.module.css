@@ -1,0 +1,122 @@
+.register_container {
+	/* height: calc(100vh - 60px); */
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.register_inner_container {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	align-items: center;
+}
+
+.container_a {
+	margin-top: 50px;
+	padding: 10px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-self: center;
+	align-self: center;
+}
+
+.container_a > h3 {
+	font-size: 30px;
+	font-weight: 900px;
+	color: rgb(31, 31, 31);
+	margin-bottom: 10px;
+}
+
+.container_a .container_p {
+	font-size: 18px;
+	font-weight: 300px;
+	color: rgb(44, 44, 44);
+	letter-spacing: 0.05rem;
+	margin-bottom: 10px;
+}
+
+.container_a label {
+	color: rgb(56, 56, 56);
+	font-size: 13px;
+}
+.container_a input {
+	width: 100%;
+	padding: 7px;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(56, 56, 56);
+
+	background: #ffffff;
+	border: 1px solid #757575;
+	/* border-radius: 5px; */
+	outline: none;
+}
+
+.btn_register_a {
+	border: none;
+	outline: none;
+	display: inline-flex;
+	justify-content: center;
+	background: #f48023;
+	color: white;
+	/* border-radius: 5px; */
+	padding: 7px 15px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin-top: 15px;
+	font-weight: 600;
+}
+
+.btn_register_a:hover {
+	background: #ff9e4f;
+	color: white;
+}
+
+.already_signup {
+	font-size: 12px;
+	margin-top: 10px;
+	font-weight: 300px;
+	color: rgb(44, 44, 44);
+	letter-spacing: 0.05rem;
+}
+
+.already_signup span {
+	color: blue;
+	cursor: pointer;
+}
+
+.container_b .regster_logo {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+
+.errorMessageContainer {
+	/* font-size: 13px; */
+	background-color: rgb(250, 128, 128);
+	padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+	.register_inner_container {
+		margin-top: 80px;
+		grid-template-columns: 1fr;
+		height: calc(100vh - 60px);
+	}
+	.container_a {
+		margin-top: 0px;
+	}
+	.container_a .container_p {
+		font-size: 16px;
+	}
+
+	.container_b .regster_logo {
+		display: none;
+	}
+
+	.already_signup {
+		font-size: 12px;
+		margin-top: 10px;
+	}
+}

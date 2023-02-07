@@ -1,0 +1,141 @@
+.interest_container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	background: rgba(0, 0, 0, 0.85);
+	overflow-x: hidden;
+}
+
+.container {
+	width: 500px;
+	padding: 20px;
+	background-color: #fafafa;
+	margin-top: 80px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	/* border-radius: 30px; */
+}
+
+.inner_a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inner_a p {
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0.05em;
+	color: #000000;
+}
+
+hr.community_line {
+	border-top: 1px solid rgb(180, 180, 180);
+}
+
+.interest_name,
+.interest_buttons {
+	margin-top: 16px;
+}
+
+.interest_name {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.interest_name p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.interest_name input {
+	margin-top: 7px;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #4e4e4e;
+	outline: none;
+	/* height: 40px; */
+
+	padding: 20px;
+	height: 50px;
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	border-radius: 10px;
+}
+
+.interest_buttons {
+	margin-left: auto;
+	display: flex;
+	gap: 10px;
+}
+.btn_cancel {
+	border: 0.5px solid #f48023;
+	outline: none;
+	gap: 5px;
+	background-color: #ffffff;
+	color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_cancel:hover {
+	background-color: #f48023;
+	color: white;
+}
+
+.btn_create {
+	border: none;
+	outline: none;
+	gap: 5px;
+	background-color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_create:hover {
+	background-color: #ff9138;
+}
+
+@media screen and (max-width: 900px) {
+	.container {
+		max-width: 300px;
+		padding: 20px;
+		height: 400px;
+	}
+
+	.interest_name input {
+		height: 40px;
+		font-size: 12px;
+	}
+
+	.btn_cancel,
+	.btn_create {
+		height: 36px;
+	}
+}

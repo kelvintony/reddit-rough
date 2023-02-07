@@ -1,0 +1,291 @@
+.community_container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 900px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	background: rgba(0, 0, 0, 0.85);
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 500px;
+	padding: 20px;
+	background-color: #fafafa;
+	margin-top: 80px;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	/* border-radius: 30px; */
+}
+.inner_a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inner_a p {
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0.05em;
+	color: #000000;
+}
+
+hr.comuunity_line {
+	border-top: 1px solid rgb(180, 180, 180);
+}
+
+.select_interest,
+.community_name,
+.radio_communityType,
+.upload_container,
+.community_buttons {
+	margin-top: 20px;
+}
+.select_interest {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.select_interest p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.select_interest select {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #4e4e4e;
+	outline: none;
+	height: 40px;
+	padding-left: 10px;
+	background-color: #ffffff;
+	border-radius: 10px;
+
+	border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.community_name {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.community_name p:nth-child(1) {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.community_name > p:nth-child(2) {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #808080;
+}
+
+.community_name > p:nth-child(4) {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	color: #808080;
+}
+
+.community_name input {
+	margin-top: 7px;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #4e4e4e;
+	outline: none;
+
+	padding: 20px;
+	height: 40px;
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	border-radius: 10px;
+}
+
+.radio_communityType {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.radio_communityType > p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.radio_communityType input[type="radio"] {
+	/* all this below is to hide the radio button */
+	opacity: 0;
+	width: 0;
+	/* position: fixed; */
+}
+
+.radio_communityType label {
+	display: inline-block;
+	background-color: rgb(241, 241, 241);
+	padding: 5px 15px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	border-radius: 5px;
+
+	width: 100%;
+	height: 60px;
+	cursor: pointer;
+}
+
+.radio_communityType label:hover {
+	background-color: #dfd;
+}
+
+.radio_communityType input[type="radio"]:checked + label {
+	background-color: #bfb;
+	border: 1px solid #4c4;
+}
+
+.radion_inner {
+	margin-left: 5px;
+	font-weight: 400;
+	font-size: 12px;
+	/* line-height: 16px; */
+	color: #808080;
+}
+
+.upload_container {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+.upload_container p {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #1f1f1f;
+}
+
+.community_buttons {
+	margin-left: auto;
+	display: flex;
+	gap: 7px;
+}
+.btn_cancel {
+	border: 0.5px solid #f48023;
+	outline: none;
+	gap: 5px;
+	background-color: #ffffff;
+	color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	height: 36px;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_cancel:hover {
+	background-color: #f48023;
+	color: white;
+}
+
+.btn_create {
+	border: none;
+	outline: none;
+	gap: 5px;
+	background-color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	height: 36px;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_create:hover {
+	background-color: #ff9138;
+}
+
+/* this section is the section when the wants to create post after creating community  */
+.continue_container {
+	max-width: 500px;
+	padding: 20px;
+	background-color: #fafafa;
+	margin-top: 80px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	/* border-radius: 30px; */
+}
+
+.continue_text {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #808080;
+}
+@media screen and (max-width: 900px) {
+	.container {
+		max-width: 300px;
+		padding: 20px;
+		margin-top: 80px;
+		height: 800px;
+		gap: 15px;
+	}
+	.community_name input {
+		height: 40px;
+		/* padding: 0; */
+	}
+	.radion_inner {
+		margin-left: 2px;
+		font-size: 12px;
+	}
+
+	.btn_cancel,
+	.btn_create {
+		height: 36px;
+	}
+	/* this section is the section when the wants to create post after creating community  */
+	.continue_container {
+		max-width: 300px;
+		padding: 20px;
+		height: 350px;
+		/* border-radius: 30px; */
+	}
+}

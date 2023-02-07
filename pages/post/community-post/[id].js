@@ -1,29 +1,29 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import Loader from '../components/Loader/Loader';
+import Loader from '../../../components/Loader/Loader';
 
-// import db from '../utils/db';
-// import postModel from '../models/post';
+import db from '../../../utils/db';
+import postModel from '../../../models/post';
 
-import styles2 from '../sections/home/MainSection.module.css';
+import styles2 from '../../../sections/home/MainSection.module.css';
 
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Navbar from '../components/Navbar/Navbar';
-import LeftSideBar from '../components/leftSideBar/LeftSideBar';
-import MainSection from '../sections/home/MainSection';
-import RightSideBar from '../sections/home/RightSideBar';
+import styles from '../../../styles/Home.module.css';
+import Navbar from '../../../components/Navbar/Navbar';
+import LeftSideBar from '../../../components/leftSideBar/LeftSideBar';
+import MainSection from '../../../sections/home/MainSection';
+import RightSideBar from '../../../sections/home/RightSideBar';
 
 import moment from 'moment';
 
-import trendingIcon from '../assets/home-page/trending-icon.svg';
-import newIcon from '../assets/home-page/new-icon.svg';
-import userIcon from '../assets/home-page/user-icon.svg';
-import futureMoreVertical from '../assets/home-page/futureMoreVertical-icon.svg';
-import numberOfViewsIcon from '../assets/home-page/numberOfViewsIcon.svg';
-import likeIcon from '../assets/home-page/like-icon.svg';
-import dislike from '../assets/home-page/dislike-icon.svg';
-import shareIcon from '../assets/home-page/share-icon.svg';
+import trendingIcon from '../../../assets/home-page/trending-icon.svg';
+import newIcon from '../../../assets/home-page/new-icon.svg';
+import userIcon from '../../../assets/home-page/user-icon.svg';
+import futureMoreVertical from '../../../assets/home-page/futureMoreVertical-icon.svg';
+import numberOfViewsIcon from '../../../assets/home-page/numberOfViewsIcon.svg';
+import likeIcon from '../../../assets/home-page/like-icon.svg';
+import dislike from '../../../assets/home-page/dislike-icon.svg';
+import shareIcon from '../../../assets/home-page/share-icon.svg';
 
 import { signIn, getSession, useSession } from 'next-auth/react';
 import axios from 'axios';
@@ -33,18 +33,21 @@ import { useRouter } from 'next/router';
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
-  // await db.connect();
+  const { params } = context;
+  const { id } = params;
 
-  // const posts = await postModel.find({}).populate('user', 'username');
-
-  // console.log('my work', posts);
-
-  // await db.disconnect();
+  await db.connect();
+  const post = await postModel
+    .findOne({ _id: id })
+    .populate('user', 'username')
+    .lean();
+  console.log('single post', post);
+  await db.disconnect();
 
   return {
     props: {
       session,
-      // myPost: posts ? JSON.parse(JSON.stringify(posts)) : null,
+      myPost: post ? JSON.parse(JSON.stringify(post)) : null,
     },
   };
 }
@@ -121,32 +124,25 @@ export default function Home({ session }) {
     let result = str.split('\n');
     return result.map((i, key) => <p key={key}>{i + '\n'}</p>);
   }
-
+  const simpleDiv = {
+    height: '300px',
+    width: '300px',
+    paddingLeft: '90px',
+    zIndex: '-1',
+  };
   return (
     <div>
       <Navbar openMenu={toggle} session={session} />
       <LeftSideBar burgerMenu={mobileMenu} closeMenu={toggle} />
       <section className={styles2.rigtbar_section}>
         {loading ? (
-          <Loader />
+          <div style={simpleDiv}>
+            <Loader />
+          </div>
         ) : error ? (
           <div className={styles.alert_error}>{error}</div>
         ) : (
           <div className={styles2.rigtbar_section_a}>
-            <button className={styles2.btn_rightbar_trending}>
-              <Image
-                width={12}
-                height={12}
-                src={trendingIcon}
-                alt='trending_icon'
-              />
-              Trending
-            </button>
-            <button className={styles2.btn_rightbar_new}>
-              <Image width={10} height={10} src={newIcon} alt='start_icon' />
-              New
-            </button>
-
             {posts.map((post) => {
               return (
                 <div key={post?._id} className={styles2.post_card}>
@@ -172,20 +168,11 @@ export default function Home({ session }) {
                       <a href=''></a>
                     )}
                   </div>
-                  <h3>
-                    <a href={`/post/community-post/${post?._id}`}>
-                      {post?.title}
-                    </a>
-                  </h3>
-                  <p>
-                    <a href={`/post/community-post/${post?._id}`}>
-                      {replaceWithBr2(cutText(post?.content))}
-                    </a>
-                  </p>
+                  <h3>{post?.title}</h3>
 
-                  {/* {replaceWithBr2(post.content)} */}
-                  {/* <div dangerouslySetInnerHTML={{__html: replaceWithBr(post?.content)}}/> */}
-                  <div className={styles2.inner_b}>
+                  {/* {replaceWithBr2(cutText(post?.content))} */}
+                  {replaceWithBr2(post?.content)}
+                  {/* <div className={styles2.inner_b}>
                     <div className={styles2.inner_ba}>
                       <button className={styles2.btn_post}>
                         {post.community}
@@ -210,59 +197,10 @@ export default function Home({ session }) {
                         155
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               );
             })}
-
-            <div className={styles2.post_card}>
-              <div className={styles2.container_a}>
-                <Image width={40} height={40} src={userIcon} alt='user_pix' />
-                <div className={styles2.inner_a}>
-                  <p>Golanginya</p>
-                  <p>5 min ago</p>
-                </div>
-                <a href=''>
-                  <Image
-                    width={24}
-                    height={24}
-                    src={futureMoreVertical}
-                    alt='feature_pix'
-                  />
-                </a>
-              </div>
-              <h3>
-                How to patch KDE on FreeBSD? How to patch KDE on FreeBSD?
-                FreeBSD?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Consequat aliquet maecenas ut sit nulla
-              </p>
-              <div className={styles2.inner_b}>
-                <div className={styles2.inner_ba}>
-                  <button className={styles2.btn_post}>goland community</button>
-                </div>
-                <div className={styles2.inner_bb}>
-                  <a href=''>
-                    <Image src={numberOfViewsIcon} alt='views_pix' />
-                    125
-                  </a>
-                  <a href=''>
-                    <Image src={likeIcon} alt='views_pix' />
-                    125
-                  </a>
-                  <a href=''>
-                    <Image src={dislike} alt='views_pix' />
-                    125
-                  </a>
-                  <a href=''>
-                    <Image src={shareIcon} alt='views_pix' />
-                    155
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         )}
         <RightSideBar />

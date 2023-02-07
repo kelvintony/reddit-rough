@@ -1,0 +1,222 @@
+.navbar_container {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background-color: white;
+	position: fixed;
+	padding: 10px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 3px 0px;
+}
+.hamburger_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hamburger_menu {
+	display: none;
+	/* display: inline-flex; */
+	justify-content: center;
+	align-items: center;
+	outline: none;
+	border: none;
+	background-color: #ffffff;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.navbar_logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.navbar_logo p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* gap: 2px; */
+	font-size: 20px;
+}
+
+.logo_image {
+	width: 30px;
+	height: 28px;
+}
+
+.navbar_logo p {
+	letter-spacing: 0.05em;
+}
+
+.navbar_btn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.btn_register {
+	border: none;
+	outline: none;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	background-color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_register:hover {
+	background-color: #ff9b49;
+}
+.user_image {
+	width: 15px;
+	height: 15px;
+}
+.btn_register > svg {
+	width: 15px;
+}
+
+.btn_login {
+	border: 1px solid #f48023;
+	outline: none;
+	display: inline-flex;
+	gap: 5px;
+	background-color: white;
+	color: #f48023;
+	border-radius: 5px;
+	padding: 7px 15px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_login:hover {
+	background-color: #f48023;
+	color: white;
+}
+
+/* profile section  */
+.profile_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn_profileImage {
+	border: none;
+	font-size: 18px;
+	font-weight: 700;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	color: #3f3f3f;
+	background-color: #dfdbe5;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 80 80'%3E%3Cg fill='%239C92AC' fill-opacity='0.35'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.btn_profileImage .profile_image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.close_profileMenu {
+	display: none;
+}
+
+.profile_dropdown {
+	display: block;
+	width: 250px;
+	position: absolute;
+	z-index: 300;
+	background-color: #ffffff;
+	top: 0;
+	right: 30px;
+	margin-top: 60px;
+	border-radius: 5px;
+
+	border: 1px solid #3f3f3f;
+	box-shadow: 3px 3px 0 #3f3f3f;
+}
+
+.profile_dropdown li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.profile_dropdown li:nth-child(1):hover {
+	background-color: inherit;
+}
+.profile_dropdown li:hover {
+	background-color: #faebd7;
+}
+
+.user_logout {
+	display: inline-flex;
+	gap: 2px;
+	padding: 5px 0;
+	justify-content: center;
+}
+
+.profile_dropdown .profile_Name {
+	font-weight: 500;
+	font-size: 14px;
+	/* line-height: 25px; */
+	letter-spacing: 0.05em;
+	color: #000000;
+}
+
+.profile_dropdown .proile_userName {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 0.05em;
+	color: #808080;
+}
+
+.profile_dropdown .profileItems {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0.05em;
+	color: #000000;
+}
+@media screen and (max-width: 900px) {
+	.navbar_container {
+		padding: 10px 15px;
+	}
+
+	.hamburger_menu {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		outline: none;
+		border: none;
+		background-color: #ffffff;
+		margin-right: 15px;
+		cursor: pointer;
+	}
+
+	.btn_register {
+		font-size: 13px;
+		padding: 5px 8px;
+	}
+
+	.btn_login {
+		font-size: 13px;
+		padding: 5px 8px;
+	}
+
+	.profile_dropdown {
+		right: 5px;
+	}
+}
